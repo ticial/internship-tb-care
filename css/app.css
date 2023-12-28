@@ -1035,7 +1035,7 @@ select.form_select__element {
 }
 
 .main-menu__body {
-  margin: 27px 0;
+  margin: 28px 0;
 }
 @media (min-width: 640px) {
   .main-menu__body {
@@ -1161,8 +1161,8 @@ select.form_select__element {
 .home__panel {
   box-sizing: border-box;
   width: 100%;
-  padding: 60px 20px;
-  opacity: 0.90000004;
+  padding: 40px 20px;
+  opacity: 0.9;
   background: #ffffff;
   background-blend-mode: normal;
 }
@@ -1170,6 +1170,7 @@ select.form_select__element {
   .home__panel {
     max-width: 700px;
     margin: 60px;
+    padding: 60px 50px;
   }
 }
 
@@ -1193,7 +1194,7 @@ select.form_select__element {
 .home__button {
   position: relative;
   margin-top: 20px;
-  width: 175px;
+  width: 176px;
   height: 40px;
   color: #017ee2;
   font-family: "RobotoCondensed", sans-serif;
@@ -1214,7 +1215,7 @@ select.form_select__element {
   left: 0;
   top: 0;
   padding: 1px;
-  border-radius: 15px;
+  border-radius: 16px;
   background-size: 200% 100%;
   background-image: linear-gradient(to right, #dff600, #017ee2, #dff600);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
