@@ -1130,8 +1130,6 @@ select.form_select__element {
 }
 .menu-button_open:hover, .menu-button_open:focus, .menu-button_open:active {
   color: #114e81;
-  border-top: 3px solid;
-  border-bottom: 3px solid;
   border-color: #114e81;
 }
 
@@ -1145,8 +1143,6 @@ select.form_select__element {
 }
 .menu-button_close:hover, .menu-button_close:focus, .menu-button_close:active {
   color: #114e81;
-  border-top: 3px solid;
-  border-bottom: 3px solid;
   border-color: #114e81;
 }
 

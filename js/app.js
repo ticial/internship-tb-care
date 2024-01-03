@@ -122,6 +122,7 @@ var header = function header() {
   var menuToggleButton = document.querySelector('.menu-button');
   var openCloseTimeout;
   function menuToggle(setOpen) {
+    menuToggleButton.blur();
     if (!setOpen || menuToggleButton.classList.contains('menu-button_close')) {
       menuToggleButton.textContent = 'menu';
       menuToggleButton.classList.remove('menu-button_close');
