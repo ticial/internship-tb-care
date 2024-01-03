@@ -119,12 +119,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var header = function header() {
   var mainMenu = document.querySelector('.main-menu');
-  var menuOpenButton = document.querySelector('.menu-button_open');
-  var menuCloseButton = document.querySelector('.menu-button_close');
+  var menuToggleButton = document.querySelector('.menu-button');
   var openCloseTimeout;
-  function openMenu(event) {
-    event.stopPropagation();
-    if (!mainMenu.classList.contains('main-menu_open')) {
+  function menuToggle(setOpen) {
+    if (!setOpen || menuToggleButton.classList.contains('menu-button_close')) {
+      menuToggleButton.textContent = 'menu';
+      menuToggleButton.classList.remove('menu-button_close');
+      menuToggleButton.classList.add('menu-button_open');
+      clearTimeout(openCloseTimeout);
+      mainMenu.classList.remove('main-menu_open');
+      openCloseTimeout = setTimeout(function () {
+        return mainMenu.classList.add('main-menu_close');
+      }, 1000);
+    } else {
+      menuToggleButton.textContent = 'close';
+      menuToggleButton.classList.remove('menu-button_open');
+      menuToggleButton.classList.add('menu-button_close');
       clearTimeout(openCloseTimeout);
       mainMenu.classList.remove('main-menu_close');
       openCloseTimeout = setTimeout(function () {
@@ -132,27 +142,17 @@ var header = function header() {
       }, 0);
     }
   }
-  function closeMenu() {
-    if (mainMenu.classList.contains('main-menu_open')) {
-      clearTimeout(openCloseTimeout);
-      mainMenu.classList.remove('main-menu_open');
-      openCloseTimeout = setTimeout(function () {
-        return mainMenu.classList.add('main-menu_close');
-      }, 1000);
-    }
-  }
   document.addEventListener('keydown', function (event) {
     if (event.code === 'Escape') {
-      closeMenu();
+      menuToggle(false);
     }
   });
   document.addEventListener('click', function (event) {
-    if (!mainMenu.contains(event.target)) {
-      closeMenu();
+    if (!mainMenu.contains(event.target) && !menuToggleButton.contains(event.target)) {
+      menuToggle(false);
     }
   });
-  menuOpenButton.addEventListener('click', openMenu);
-  menuCloseButton.addEventListener('click', closeMenu);
+  menuToggleButton.addEventListener('click', menuToggle);
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (header);
 
